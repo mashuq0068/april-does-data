@@ -6,9 +6,9 @@ import React from 'react';
 const Services = () => {
     return (
         <div>
-            <Navigation onGetAssessment={() => {}} />
+            {/* <Navigation onGetAssessment={() => {}} /> */}
             <ServicesSection />
-            <Footer onGetAssessment={() => {}} />
+            {/* <Footer onGetAssessment={() => {}} /> */}
         </div>
     );
 };

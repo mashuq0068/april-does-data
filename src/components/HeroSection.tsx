@@ -22,7 +22,7 @@ const HeroSection = ({
          
          <img src="/hero.png" alt="" className="" />
           <Slides/>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="text-center lg:text-left">
 
             <h1 className="text-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
@@ -36,17 +36,17 @@ const HeroSection = ({
               who need more than just spreadsheets.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex   ">
               <Button onClick={onGetAssessment} size="lg" className="bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg transform transition-all duration-200 hover:scale-105 shadow-xl group">
                 Get My Free Assessment
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
               
-              <Button variant="outline" size="lg" onClick={() => document.getElementById('packages')?.scrollIntoView({
+              {/* <Button variant="outline" size="lg" onClick={() => document.getElementById('packages')?.scrollIntoView({
               behavior: 'smooth'
             })} className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 text-blue-700 hover:bg-blue-50 transition-all duration-200">
                 View Packages
-              </Button>
+              </Button> */}
             </div>
 
             {/* <div className="mt-12 grid grid-cols-2 gap-8 text-center lg:text-left">

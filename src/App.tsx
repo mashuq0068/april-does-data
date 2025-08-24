@@ -7,11 +7,13 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ServicesSection from "./components/ServicesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
-import MainLayout from "./components/layout/Mainlayout";
+// import MainLayout from "./components/layout/Mainlayout";
 import Services from "./pages/Services";
 import Testimonials from "./pages/Testomonials";
 import { Scroll } from "lucide-react";
 import ScrollToTop from "./components/ui/ScrollTop";
+import MainLayout from "./components/layout/MainLayout";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -23,13 +25,13 @@ const App = () => (
       <BrowserRouter>
     <ScrollToTop/>
         <Routes>
-          {/* <Route path="/" element={<MainLayout />}> */}
+          <Route path="/" element={<MainLayout />}>
             <Route index element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/testimonials" element={<Testimonials />} />
-           
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
-          {/* </Route> */}
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

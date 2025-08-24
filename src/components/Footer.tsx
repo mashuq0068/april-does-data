@@ -1,31 +1,48 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from "lucide-react";
 interface FooterProps {
   onGetAssessment: () => void;
 }
-const Footer = ({
-  onGetAssessment
-}: FooterProps) => {
-  return <footer className="bg-gray-900 text-white py-16">
+const Footer = ({ onGetAssessment }: FooterProps) => {
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    if (!email) return alert("Please enter your email!");
+    // Handle subscription logic here (API call or form submission)
+    alert(`Subscribed with ${email}`);
+    e.target.reset();
+  };
+  return (
+    <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/ADD logo.png" className='h-10' alt="" />
+              <img
+                src="/lovable-uploads/ADD logo.png"
+                className="h-10"
+                alt=""
+              />
               <span className="text-xl font-bold">April Does Data</span>
             </div>
-            
+
             <p className="text-gray-400 max-w-md">
-              Expert remote bookkeeping for tradespeople, landlords, and small business owners. 
-              Clean books, clear vision, confident decisions.
+              Expert remote bookkeeping for tradespeople, landlords, and small
+              business owners. Clean books, clear vision, confident decisions.
             </p>
-            
+
             <div className="space-y-3">
-              <a href="tel:323-749-9444" className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
+              <a
+                href="tel:323-749-9444"
+                className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+              >
                 <Phone className="w-5 h-5" />
                 <span>323-749-9444</span>
               </a>
-              <a href="mailto:help@aprildoesdata.com" className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
+              <a
+                href="mailto:help@aprildoesdata.com"
+                className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+              >
                 <Mail className="w-5 h-5" />
                 <span>april@aprildoesdata.com</span>
               </a>
@@ -35,7 +52,7 @@ const Footer = ({
               </div>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           {/* <div>
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
@@ -46,23 +63,64 @@ const Footer = ({
               <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
             </ul>
           </div> */}
-          
+
           {/* Get Started */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Get Started</h3>
-            <div className="bg-gradient-to-r from-brandPurple to-brandPink rounded-xl p-6">
-              <p className="text-white mb-4 font-medium">Ready to clean up your books?</p>
-              <button onClick={onGetAssessment} className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
-                Free Assessment
+          <div className="bg-gray-900 w-full mx-auto min-h-[300px] flex flex-col px-4 py-6">
+            {/* Title */}
+            <div className=" flex flex-col items-center  md:items-center text-center md:text-end ">
+              <h2 className="text-2xl text-end  font-bold text-white mb-2">
+                Stay Informed and Connected
+              </h2>
+              {/* Subtitle */}
+              <p className="text-gray-300 text-center text-lg mb-4">
+                Subscribe to our newsletter for the latest updates
+              </p>
+            </div>
+
+            {/* Newsletter Form */}
+            <form
+              onSubmit={handleSubscribe}
+              className="w-full  ml-auto flex flex-col sm:flex-row items-center gap-4"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="flex-1 w-full bg-white p-3 rounded-lg border border-gray-700  text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandPurple"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-brandPurple to-brandPink text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity w-full sm:w-auto"
+              >
+                Subscribe
               </button>
+            </form>
+
+            <div className=" max-w-xl w-full ">
+              {/* <h3 className="text-lg font-semibold mb-6">Get Started</h3> */}
+              <div className="bg-gradient-to-r from-brandPurple to-brandPink rounded-xl mt-5 p-6 max-w-lg mx-auto flex-1">
+                <p className="text-white mb-4 font-medium">
+                  Ready to clean up your books?
+                </p>
+                <button
+                  onClick={onGetAssessment}
+                  className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  Free Assessment
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© 2024 April Does Data. All rights reserved.</p>
+          <p className="text-gray-400">
+            © 2024 April Does Data. All rights reserved.
+          </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 export default Footer;

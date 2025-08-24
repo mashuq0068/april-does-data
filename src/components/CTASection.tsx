@@ -1,27 +1,43 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Clock, Shield } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle, Clock, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface CTASectionProps {
   onGetAssessment: () => void;
 }
 
 const CTASection = ({ onGetAssessment }: CTASectionProps) => {
+  const navigate = useNavigate();
   return (
-    <section className="py-10 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 relative overflow-hidden">
+    <section className="pb-10 pt-5 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-20">
+      {/* <div className="absolute inset-0 opacity-20">
         <div className="w-full h-full bg-white/10 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_0)] bg-[length:60px_60px]"></div>
-      </div>
-      
+      </div> */}
+<div className="flex justify-center">
+  <Button
+    onClick={() => navigate("/services")}
+    className="group mb-3 text-center font-semibold px-6 py-2 rounded-lg shadow-md w-max transition duration-200
+               bg-white hover:bg-gradient-to-r from-[#667eea] to-[#764ba2]"
+  >
+    <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent
+                     group-hover:bg-clip-auto group-hover:text-white transition duration-200">
+      View All Services
+    </span>
+  </Button>
+</div>
+
+
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Ready to Get Clean Books and <span className="">Peace of Mind?</span>
         </h2>
-        
+
         <p className="text-xl text-blue-100 mb-8">
-          Schedule your free assessment today. No pressure, no sales pitch — just clarity.
+          Schedule your free assessment today. No pressure, no sales pitch —
+          just clarity.
         </p>
-        
+
         {/* Benefits */}
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-10">
           <div className="flex items-center space-x-2 text-white">
@@ -37,8 +53,8 @@ const CTASection = ({ onGetAssessment }: CTASectionProps) => {
             <span>No obligation</span>
           </div>
         </div>
-        
-        <Button 
+
+        <Button
           onClick={onGetAssessment}
           size="lg"
           className="bg-white text-brandPurple hover:bg-gray-100 text-lg px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
@@ -46,7 +62,7 @@ const CTASection = ({ onGetAssessment }: CTASectionProps) => {
           Request My Free Assessment
           <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
-        
+
         <p className="text-blue-200 mt-4 text-sm">
           You'll hear from us within 24 hours
         </p>

@@ -82,15 +82,16 @@ export default function AuthoritySection() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                <img src="https://logos-world.net/wp-content/uploads/2021/03/QuickBooks-Logo.png" alt="QuickBooks" className="w-6 h-6" />
-                <span className="text-sm font-medium text-gray-700">QuickBooks</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                <span className="text-lg">🏛️</span>
-                <span className="text-sm font-medium text-gray-700">IRS Compliant</span>
-              </div>
-            </div>
+  <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+    <span className="text-lg">📘</span>
+    <span className="text-sm font-medium text-gray-700">QuickBooks</span>
+  </div>
+  <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+    <span className="text-lg">🏛️</span>
+    <span className="text-sm font-medium text-gray-700">IRS Compliant</span>
+  </div>
+</div>
+
           </div>
         </div>
 

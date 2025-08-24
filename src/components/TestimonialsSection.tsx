@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star, Quote, ArrowRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  Quote,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "./Footer";
 import Navigation from "./Navigation";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const navigate = useNavigate()
+  const location = useLocation();
+
+  const navigate = useNavigate();
 
   const testimonials = [
     {
@@ -136,16 +144,17 @@ const TestimonialsSection = () => {
                 ))}
               </div>
             </div>
-            <div className="flex justify-center">
+            {location.pathname === "/" && (
+              <div className="flex justify-center">
                 <Button
-              onClick={() => navigate('/testimonials')}
-              size="lg"
-              className="bg-gradient-to-r from-brandBlue to-brandPurple hover:from-brandPurple  hover:to-brandPink transition-all duration-300 w-max mx-auto"
-            >
-              View All Testimonials
-              
-            </Button>
-            </div>
+                  onClick={() => navigate("/testimonials")}
+                  size="lg"
+                  className="bg-gradient-to-r from-brandBlue to-brandPurple hover:from-brandPurple hover:to-brandPink transition-all duration-300 w-max mx-auto"
+                >
+                  View All Testimonials
+                </Button>
+              </div>
+            )}
 
             {/* Navigation */}
             {/* <div className="flex justify-center space-x-4 mt-8">
@@ -162,7 +171,6 @@ const TestimonialsSection = () => {
                 <ChevronRight className="w-6 h-6 text-gray-600" />
               </button>
             </div> */}
-          
 
             {/* Dots indicator */}
             <div className="flex justify-center space-x-2 mt-4">

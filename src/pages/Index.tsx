@@ -25,7 +25,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Navigation onGetAssessment={handleOpenAssessment} />
+      {/* <Navigation onGetAssessment={handleOpenAssessment} /> */}
       <main>
         <HeroSection onGetAssessment={handleOpenAssessment} />
         <April />
@@ -36,7 +36,7 @@ const Index = () => {
         {/* <PricingSection onGetAssessment={handleOpenAssessment} /> */}
         <TestimonialsSection />
       </main>
-      <Footer onGetAssessment={handleOpenAssessment} />
+      {/* <Footer onGetAssessment={handleOpenAssessment} /> */}
       <AssessmentModal 
         isOpen={isAssessmentModalOpen} 
         onClose={handleCloseAssessment} 

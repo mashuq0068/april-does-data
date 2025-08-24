@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const April = () => {
+  const navigate = useNavigate()
   return (
     <div className="  overflow-hidden">
       {/* <img src="/april-1.png" alt="" /> 
@@ -25,6 +28,7 @@ const April = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ amount: 0.3 }}
       />
+      
     </div>
   );
 };

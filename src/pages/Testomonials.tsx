@@ -7,9 +7,9 @@ import React from 'react';
 const Testimonials = () => {
     return (
         <div>
-            <Navigation onGetAssessment={()=>{}}/>
+            {/* <Navigation onGetAssessment={()=>{}}/> */}
             <TestimonialsSection />
-            <Footer onGetAssessment={() => {}}/>
+            {/* <Footer onGetAssessment={() => {}}/> */}
         </div>
     );
 };
