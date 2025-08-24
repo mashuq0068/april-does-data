@@ -29,10 +29,10 @@ const Index = () => {
       <main>
         <HeroSection onGetAssessment={handleOpenAssessment} />
         <April />
+        <ServicesSection />
         <CTASection onGetAssessment={handleOpenAssessment} />
        
         <AuthoritySection />
-        <ServicesSection />
         {/* <PricingSection onGetAssessment={handleOpenAssessment} /> */}
         <TestimonialsSection />
       </main>

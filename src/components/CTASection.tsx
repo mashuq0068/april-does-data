@@ -9,27 +9,16 @@ interface CTASectionProps {
 const CTASection = ({ onGetAssessment }: CTASectionProps) => {
   const navigate = useNavigate();
   return (
-    <section className="pb-10 pt-5 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600  mx-auto overflow-hidden">
       {/* Background decorative elements */}
       {/* <div className="absolute inset-0 opacity-20">
         <div className="w-full h-full bg-white/10 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_0)] bg-[length:60px_60px]"></div>
       </div> */}
-<div className="flex justify-center">
-  <Button
-    onClick={() => navigate("/services")}
-    className="group mb-3 text-center font-semibold px-6 py-2 rounded-lg shadow-md w-max transition duration-200
-               bg-white hover:bg-gradient-to-r from-[#667eea] to-[#764ba2]"
-  >
-    <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent
-                     group-hover:bg-clip-auto group-hover:text-white transition duration-200">
-      View All Services
-    </span>
-  </Button>
-</div>
+
 
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-4xl font-bold text-white mb-6">
           Ready to Get Clean Books and <span className="">Peace of Mind?</span>
         </h2>
 
