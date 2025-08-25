@@ -49,7 +49,7 @@ const Contact = () => {
             "Get time on the calendar now to discuss your financial and bookkeeping needs!",
           ]}
           //   loop={0}
-          cursor
+          cursor={false}
           cursorStyle="|"
           typeSpeed={50}
           deleteSpeed={50}
@@ -168,7 +168,7 @@ const Contact = () => {
       <h2 className="text-4xl font-normal text-white font-serif mb-2">Follow Me</h2>
       {/* Subtitle */}
       <p className="text-gray-300 font-serif text-lg mt-3 mb-8">
-        Stay connected and get the latest updates on our social media channels
+        Stay connected and get the latest updates on me social media channels
       </p>
 
       {/* Social Media Icons */}
@@ -184,7 +184,7 @@ const Contact = () => {
             <img
               src={social.src}
               alt={social.alt}
-              className="w-36 h-36 object-contain"
+              className="w-40 h-40 hover:shadow-2xl hover:drop-shadow-xl object-contain"
             />
           </a>
         ))}

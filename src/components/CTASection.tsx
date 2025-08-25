@@ -9,7 +9,7 @@ interface CTASectionProps {
 const CTASection = ({ onGetAssessment }: CTASectionProps) => {
   const navigate = useNavigate();
   return (
-    <section className="py-10 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600  mx-auto overflow-hidden">
+    <section className="py-10 lg:mx-[1vw] bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-xl   overflow-hidden">
       {/* Background decorative elements */}
       {/* <div className="absolute inset-0 opacity-20">
         <div className="w-full h-full bg-white/10 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_0)] bg-[length:60px_60px]"></div>

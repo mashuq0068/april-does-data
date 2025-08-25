@@ -11,9 +11,10 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { Button } from "./ui/button";
 import { useLocation, useNavigate } from "react-router-dom";
+import Service1 from "./Service1";
 const ServicesSection = () => {
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   const services = [
     {
       title: "Catch-up & Cleanup",
@@ -61,15 +62,17 @@ const ServicesSection = () => {
       <section id="services" className=" bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold gradient-text uppercase mb-4">
-              Our <span className="gradient-text">Services</span>
-            </h2>
-            <p className="text-xl  max-w-3xl mx-auto">
-              Comprehensive bookkeeping solutions tailored to your business
-              needs
-            </p>
-          </div>
+          {location.pathname === "/" && (
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold gradient-text uppercase mb-4">
+                Our <span className="gradient-text">Services</span>
+              </h2>
+              <p className="text-xl  max-w-3xl mx-auto">
+                Comprehensive bookkeeping solutions tailored to your business
+                needs
+              </p>
+            </div>
+          )}
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -125,21 +128,22 @@ const ServicesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </div>
       </section>
-       {location.pathname === "/" &&
+      {location.pathname === "/" && (
         <div className="flex justify-center">
-        <Button
-          onClick={() => navigate("/services")}
-          className="group text-center font-semibold px-12 py-3 rounded-lg shadow-md w-max transition duration-200
+          <Button
+            onClick={() => navigate("/services")}
+            className="group text-center font-semibold px-12 py-3 rounded-lg shadow-md w-max transition duration-200
                bg-white hover:bg-gradient-to-r from-[#667eea] to-[#764ba2]"
-        >
-          <span
-            className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent
-                     group-hover:bg-clip-auto group-hover:text-white transition duration-200"
           >
-            View All Services
-          </span>
-        </Button>
-      </div>}
+            <span
+              className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent
+                     group-hover:bg-clip-auto group-hover:text-white transition duration-200"
+            >
+              View All Services
+            </span>
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
