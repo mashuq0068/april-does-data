@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calculator, TrendingUp, Shield } from "lucide-react";
 import intuitLogo from "@/assets/intuit-logo.png";
 import Slides from "./Slides";
+import { useNavigate } from "react-router-dom";
 interface HeroSectionProps {
   onGetAssessment: () => void;
 }
 const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
+  const navigate = useNavigate();
   return (
     <section
       id="home"
@@ -69,13 +71,11 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
                 variant="outline"
                 size="lg"
                 onClick={() =>
-                  document.getElementById("packages")?.scrollIntoView({
-                    behavior: "smooth",
-                  })
+                 navigate('/contact')
                 }
                 className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 text-blue-700 hover:bg-blue-50 transition-all duration-200"
               >
-                View Packages
+                Contact Me
               </Button>
             </div>
 
