@@ -25,10 +25,11 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
               />
               <span className="text-xl font-bold">April Does Data</span>
             </div>
-
-            <p className="text-gray-400 max-w-md">
-              Expert remote bookkeeping for tradespeople, landlords, and small
-              business owners. Clean books, clear vision, confident decisions.
+            <p className="max-w-md">
+              A seasoned expert with 25+ years of experience in CFO and
+              Fractional Bookkeeping Services. I’ve helped businesses streamline
+              their records, improve cash flow, and make confident financial
+              decisions with clarity and precision.
             </p>
 
             <div className="space-y-3">
@@ -101,7 +102,7 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
               {/* <h3 className="text-lg font-semibold mb-6">Get Started</h3> */}
               <div className="bg-gradient-to-r from-brandPurple to-brandPink rounded-xl mt-5 p-6 max-w-lg mx-auto flex-1">
                 <p className="text-white mb-4 font-medium">
-                  Ready to clean up your books?
+                  Ready To Learn Your Profit Margin?
                 </p>
                 <button
                   onClick={onGetAssessment}

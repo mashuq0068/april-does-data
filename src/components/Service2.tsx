@@ -106,7 +106,7 @@ const Service1: React.FC = () => {
           <div className="max-w-xl absolute bottom-0 mt-auto h-max w-full">
             <div className="bg-gradient-to-r from-brandPurple to-brandPink rounded-xl mt-5 p-6 max-w-lg mx-auto flex-1">
               <p className="text-white mb-4 font-medium">
-                Ready to clean up your books?
+                Ready To Learn Your Profit Margin?
               </p>
               <button className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
                 Free Assessment

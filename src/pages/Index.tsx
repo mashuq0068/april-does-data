@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import AssessmentModal from '@/components/AssessmentModal';
 import April from '@/components/April';
 import Slides from '@/components/Slides';
+import Badges from '@/components/Badges';
 
 const Index = () => {
   const [isAssessmentModalOpen, setIsAssessmentModalOpen] = useState(false);
@@ -29,8 +30,9 @@ const Index = () => {
       <main>
         <HeroSection onGetAssessment={handleOpenAssessment} />
         <April />
-        <ServicesSection />
-        <CTASection onGetAssessment={handleOpenAssessment} />
+        {/* <ServicesSection /> */}
+        {/* <CTASection onGetAssessment={handleOpenAssessment} /> */}
+        <Badges/>
        
         <AuthoritySection />
         {/* <PricingSection onGetAssessment={handleOpenAssessment} /> */}

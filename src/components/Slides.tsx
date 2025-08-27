@@ -8,7 +8,7 @@ const Slides = () => {
 
       {/* Second Image */}
       <motion.img
-        src="/client-v4.png"
+        src="/client-main.png"
         alt="Client Slide"
         className="w-full md:w-1/2   shadow-xl"
         initial={{ opacity: 0, x: -100 }}
@@ -17,7 +17,7 @@ const Slides = () => {
         viewport={{ amount: 0.3 }}
       />
       <motion.img
-        src="/info-3.png"
+        src="/info-5.png"
         alt="Text Slide"
         className="w-full md:w-1/2 object-contain  shadow-xl"
         initial={{ opacity: 0, x: 100 }}

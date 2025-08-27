@@ -24,59 +24,57 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
         <div className="flex w-full h-max bg-gradient-to-r from-pink-600 via-purple-600 to-blue-700">
           {/* Left Section with Background Image */}
           <div
-  className="w-1/3 h-[250px] bg-contain bg-no-repeat "
-  style={{ backgroundImage: "url('/calculator-removedbg.png')" }}
-></div>
+            className="w-1/3 h-[250px] md:block hidden bg-contain bg-no-repeat "
+            style={{ backgroundImage: "url('/calculator-removedbg.png')" }}
+          ></div>
 
           {/* Right Section with Text */}
-          <div className="flex h-full flex-col capitalize items-center justify-center text-center ">
-    <div className="w-full max-w-3xl mx-auto text-white font-serif">
-  <h1 className="text-4xl md:text-5xl mt-20 font-semibold text-center">
-    Empowering Your Finances
-  </h1>
-  <h1 className="text-2xl md:text-3xl mt-4 font-semibold text-center overflow-hidden whitespace-nowrap leading-snug pr-2 animate-typing">
-    Fractional CFO and Bookkeeping Services
-  </h1>
-</div>
-
-
+          <div className="flex h-full flex-col md:pb-0 pb-12 capitalize items-center justify-center text-center  ">
+            <div className="w-full max-w-3xl mx-auto text-white font-serif">
+              <h1 className="text-3xl md:text-5xl mt-20 font-semibold text-center">
+                Empowering Your Finances
+              </h1>
+              <h1 className="text-xl md:text-3xl mt-4 font-semibold text-center overflow-hidden whitespace-nowrap md:leading-snug pr-2 animate-typing ">
+                Fractional CFO and Bookkeeping Services
+              </h1>
+            </div>
           </div>
         </div>
         <Slides />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
+            <h1 className="text-xl max-w-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
               Clean Books. <span className="gradient-text">Clear Vision.</span>{" "}
               <span className="text-blue-60 gradient-text">
                 Confident Decisions.
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-4 max-w-2xl">
-              Remote bookkeeping tailored for tradespeople, landlords, and small
-              business owners who need more than just spreadsheets.
+            <p className="text-xl font-alike text-gray-600 text-justify mb-4 max-w-lg">
+              Fractional CFO + bookkeeping for construction, services, and real
+              estate. With 25+ years building scalable systems that boost
+              clarity, cash flow, and profit. Award-winning results, including
+              scaling a client to $32M in under four years.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col w-full max-w-lg sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
-                onClick={onGetAssessment}
+                onClick={() => navigate("/contact")}
                 size="lg"
-                className="bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg transform transition-all duration-200 hover:scale-105 shadow-xl group"
+                className="bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold w-full text-lg transform transition-all duration-200 hover:scale-105 shadow-xl group"
               >
                 Get My Free Assessment
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
 
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
-                onClick={() =>
-                 navigate('/contact')
-                }
+                onClick={() => navigate("/contact")}
                 className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 text-blue-700 hover:bg-blue-50 transition-all duration-200"
               >
                 Contact Me
-              </Button>
+              </Button> */}
             </div>
 
             {/* <div className="mt-12 grid grid-cols-2 gap-8 text-center lg:text-left">

@@ -4,11 +4,11 @@ import { Shield, Award, Users, BookOpen, Check } from "lucide-react";
 export default function AuthoritySection() {
   const credentials = [{
     icon: Shield,
-    title: "QuickBooks ProAdvisor",
+    title: "ProAdvisor in Bookkeeping",
     description: "Certified expert"
   }, {
     icon: Award,
-    title: "15+ Years Experience",
+    title: "25+ Years Experience",
     description: "Proven track record"
   }, {
     icon: Users,
@@ -57,16 +57,16 @@ export default function AuthoritySection() {
           </div>
 
           <div>
-            <h2 className="text-3xl uppercase gradient-text font-bold text-gray-900 mb-6">
-              Expert Help Without the{" "}
-              <span >Overhead</span>
+            <h2 className="text-2xl  gradient-text font-bold text-gray-900 mb-6">
+             Tell her What Your Unique Business Need?
+              
             </h2>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              April Does Data is a Certified QuickBooks ProAdvisor who works with clients remotely 
+            <p className="text-xl  mb-8 leading-relaxed">
+             <span className="font-semibold text-gray-900">April Does Data</span> is a Certified QuickBooks ProAdvisor who works with clients remotely 
               across the country. Whether your books are a mess, your payroll is behind, or you're 
               prepping for a surprise audit, we step in and clean it up.{" "}
-              <span className="font-semibold text-gray-900">Fast. Accurate. Done Right. Even when no one's looking.</span>
+              Fast. Accurate. Done Right. Even when no one's looking.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
