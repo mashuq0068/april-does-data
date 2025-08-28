@@ -17,7 +17,7 @@ const Slides = () => {
         viewport={{ amount: 0.3 }}
       />
       <motion.img
-        src="/client-info-updated.png"
+        src="/client-info-new.png"
         alt="Text Slide"
         className="w-full md:w-1/2 object-contain  shadow-xl"
         initial={{ opacity: 0, x: 100 }}
