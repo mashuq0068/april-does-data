@@ -74,55 +74,7 @@ const ServicesSection = () => {
             </div>
           )}
 
-          {/* Services Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                }}
-              >
-                <div
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${
-                    service.color === "blue"
-                      ? "bg-blue-100"
-                      : service.color === "green"
-                      ? "bg-green-100"
-                      : "bg-purple-100"
-                  }`}
-                >
-                  <service.icon
-                    className={`w-6 h-6 ${
-                      service.color === "blue"
-                        ? "text-brandBlue"
-                        : service.color === "green"
-                        ? "text-green-600"
-                        : "text-brandPurple"
-                    }`}
-                  />
-                </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="flex items-start space-x-3"
-                    >
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+       
 
           {/* Additional Services */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6"></div>

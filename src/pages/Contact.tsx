@@ -9,7 +9,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12 px-4 md:px-8">
+    <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12 ">
       <h1 className="text-white mt-16 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-xl mx-auto">
         Schedule Your Consultation Now
       </h1>
@@ -23,7 +23,7 @@ const Contact = () => {
         />
       </p>
 
-      <form className="space-y-4 max-w-2xl my-12 w-full mx-auto">
+      <form className="space-y-4 lg:px-0 px-4 max-w-2xl my-12 w-full mx-auto">
         <div>
           <label className="block text-white font-medium mb-2" htmlFor="company">Company Name</label>
           <input
@@ -95,7 +95,7 @@ const Contact = () => {
         </button>
       </form>
 
-      <div className="bg-gray-900 mt-24 w-full mx-auto min-h-[300px] flex flex-col items-center justify-center text-center px-4 py-12">
+      <div className="bg-gray-900 mt-24 w-full mx-auto min-h-[300px] flex flex-col items-center justify-center text-center  py-12">
         <h2 className="text-3xl sm:text-4xl font-normal text-white font-serif mb-2">Follow Me</h2>
         <p className="text-gray-300 font-serif text-base sm:text-lg mt-3 mb-8 max-w-xl">
           Stay connected and get the latest updates on my social media channels

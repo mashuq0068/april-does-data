@@ -73,7 +73,10 @@ const TestimonialsSection = () => {
             <div className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
               Not sure what you need?
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 mb-8">
+            <Button
+              onClick={() => navigate("/contact")}
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 mb-8"
+            >
               Take the Free Assessment
             </Button>
 

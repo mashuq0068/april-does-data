@@ -41,18 +41,18 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
           </div>
         </div>
         <Slides />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <h1 className="text-xl max-w-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mb-6 md:gap-0 gap-12 items-center">
+          <div className="text-center ml-[10%] lg:text-left">
+            <h1 className="md:text-xl max-w-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
               Clean Books. <span className="gradient-text">Clear Vision.</span>{" "}
               <span className="text-blue-60 gradient-text">
                 Confident Decisions.
               </span>
             </h1>
 
-            <p className="text-xl font-alike text-gray-600 text-justify mb-4 max-w-lg">
-              Fractional CFO + bookkeeping for construction, services, and real
-              estate. With 25+ years building scalable systems that boost
+            <p className="md:text-xl font-alike text-gray-600 text-justify mb-4 max-w-lg">
+              Fractional CFO + bookkeeping for Construction, services, and Real
+              Estate. With 25+ years building scalable systems that boost
               clarity, cash flow, and profit. Award-winning results, including
               scaling a client to $32M in under four years.
             </p>
@@ -60,8 +60,7 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
             <div className="flex flex-col w-full max-w-lg sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 onClick={() => navigate("/contact")}
-                size="lg"
-                className="bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold w-full text-lg transform transition-all duration-200 hover:scale-105 shadow-xl group"
+                className="bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white px-8 py-4 rounded-full  font-semibold w-full  lg:text-lg transform transition-all duration-200 hover:scale-105 shadow-xl group"
               >
                 Get My Free Assessment
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -95,8 +94,26 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
             </div> */}
           </div>
 
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+          {/* <div className="relative"> */}
+          <div className="flex gap-6 flex-wrap justify-center lg:justify-center items-center mt-8">
+            <img
+              src="/badge-2.png"
+              alt="Badge 1"
+              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+            />
+            <img
+              src="/badge-3.png"
+              alt="Badge 2"
+              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+            />
+            <img
+              src="/badge-1.png"
+              alt="Badge 3"
+              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+
+          {/* <div className="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <div className="space-y-4">
                 <div className="h-4 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full"></div>
                 <div className="space-y-2">
@@ -119,14 +136,27 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
                 <Shield className="w-4 h-4" />
                 Certified QuickBooks ProAdvisor
               </div>
-            </div>
+            </div> */}
 
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+          {/* <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
               <span className="text-2xl">📊</span>
+            </div> */}
+        </div>
+        <div className="lg:grid grid-cols-2">
+          <div>
+
+          </div>
+          <div className=" mb-6 flex justify-center w-full">
+            <div className="inline-flex lg:w-1/2 items-center gap-2 bg-white/80 backdrop-blur-sm px-4 rounded-full border border-blue-100 text-sm font-medium text-blue-700 mb-2 py-[16px] my-[5px]">
+              <img src={intuitLogo} alt="Intuit" className="w-4 h-4" />
+              <Shield className="w-4 h-4" />
+              QuickBooks Certified As A Pro Advisor
             </div>
           </div>
+         
         </div>
       </div>
+      {/* </div> */}
     </section>
   );
 };

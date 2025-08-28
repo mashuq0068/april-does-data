@@ -1,8 +1,10 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 interface FooterProps {
   onGetAssessment: () => void;
 }
 const Footer = ({ onGetAssessment }: FooterProps) => {
+  const navigate = useNavigate()
   const handleSubscribe = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -105,7 +107,7 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
                   Ready To Learn Your Profit Margin?
                 </p>
                 <button
-                  onClick={onGetAssessment}
+                  onClick={() => navigate('/contact')}
                   className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Free Assessment

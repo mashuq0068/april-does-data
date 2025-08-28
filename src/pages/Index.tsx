@@ -32,7 +32,7 @@ const Index = () => {
         <April />
         {/* <ServicesSection /> */}
         {/* <CTASection onGetAssessment={handleOpenAssessment} /> */}
-        <Badges/>
+        {/* <Badges/> */}
        
         <AuthoritySection />
         {/* <PricingSection onGetAssessment={handleOpenAssessment} /> */}
