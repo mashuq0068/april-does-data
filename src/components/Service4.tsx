@@ -104,7 +104,7 @@ const Service4: React.FC = () => {
         </h2>
         <div className=" space-y-20">
           {/* 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 2xl:gap-10">
             <div className="space-y-6 lg:order-1 lg:mb-0 mb-8 order-2 ">
               {services1.map((service, index) => (
                 <Card key={index} className="shadow-lg">
@@ -128,21 +128,21 @@ const Service4: React.FC = () => {
               </h2>
               <img
                 src="/service-4-1.jpg"
-                className=" max-h-[50vh]  w-max mx-auto"
+                className=" max-h-[50vh] 2xl:max-h-[44vh] w-max mx-auto"
                 alt=""
               />
             </div>
           </div>
           {/* 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-            <div className="text-white relative space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 2xl:gap-10">
+            <div className="text-white relative ">
               <h2 className="text-2xl lg:text-3xl text-center text-white mb-12   font-bold">
                 Monthly Bookkeeping
                 {/* <p className="text-center font-normal mt-4">Subtitle</p> */}
               </h2>
               <img
                 src="/service-4-2.jpg"
-                className=" max-h-[50vh]  w-max mx-auto"
+                className=" max-h-[50vh] 2xl:max-h-[44vh] w-max mx-auto"
                 alt=""
               />
             </div>
@@ -164,7 +164,7 @@ const Service4: React.FC = () => {
             </div>
           </div>
           {/* 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 2xl:gap-10">
             <div className="space-y-6 lg:order-1 lg:mb-0 mb-8 order-2   ">
               {services3.map((service, index) => (
                 <Card key={index} className="shadow-lg">
@@ -188,7 +188,7 @@ const Service4: React.FC = () => {
               </h2>
               <img
                 src="/service-4-3.jpg"
-                className=" max-h-[50vh]  w-max mx-auto"
+                className=" max-h-[50vh] 2xl:max-h-[44vh] w-max mx-auto"
                 alt=""
               />
             </div>
