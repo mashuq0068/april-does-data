@@ -98,7 +98,7 @@ export default function AuthoritySection() {
 
           <div>
             <h2 className="text-2xl  gradient-text font-bold text-gray-900 mb-6">
-              Tell Her What You Unique Business Need!
+              Tell Her Your Problem And She'll Find A Solution
             </h2>
 
             <p className="text-xl  mb-8 leading-relaxed">

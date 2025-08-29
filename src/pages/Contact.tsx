@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const [help, setHelp] = useState("");
+  const [sending, setSending] = useState(false);
 
   const socialLinks = [
     {
@@ -22,6 +25,7 @@ const Contact = () => {
     },
     { src: "/x.png", url: "https://x.com/aprildoesdata", alt: "X" },
   ];
+
   const otherLinks = [
     {
       src: "/alignable.png",
@@ -33,15 +37,45 @@ const Contact = () => {
       url: "https://proadvisor.intuit.com/app/accountant/search?searchId=aprilcswanner",
       alt: "intuit",
     },
-    
   ];
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSending(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
+
+      .then(
+        () => {
+          toast.success("Message sent successfully!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+          setSending(false);
+        },
+        (error) => {
+          alert("Failed to send message: " + error.text);
+          setSending(false);
+        }
+      );
+  };
+
   return (
-    <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12 ">
+    <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12">
       <h1 className="text-white mt-8 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-xl mx-auto">
         Schedule Your Consultation Now
       </h1>
-      <p className="text-center text-lg sm:text-xl font-serif text-white  max-w-2xl mx-auto">
+      <p className="text-center text-lg sm:text-xl font-serif text-white max-w-2xl mx-auto">
         <Typewriter
           words={[
             "Get time on the calendar now to discuss your financial and bookkeeping needs!",
@@ -53,7 +87,10 @@ const Contact = () => {
         />
       </p>
 
-      <form className="space-y-4 lg:px-0 px-4 max-w-2xl my-12 w-full mx-auto">
+      <form
+        className="space-y-4 lg:px-0 px-4 max-w-2xl my-12 w-full mx-auto"
+        onSubmit={sendEmail}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label
@@ -64,9 +101,11 @@ const Contact = () => {
             </label>
             <input
               type="text"
+              name="company"
               id="company"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your Company Name"
+              required
             />
           </div>
           <div>
@@ -77,14 +116,16 @@ const Contact = () => {
               Business Type
             </label>
             <select
+              name="businessType"
               id="businessType"
               defaultValue=""
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+              required
             >
-              {/* <option value="" disabled className="text-gray-400" selected>
+              <option value="" disabled>
                 Select Business Type
-              </option> */}
-              <option value="Fractional CFO Services">
+              </option>
+              <option value="Real Estate Investor/Developer">
                 Real Estate Investor/Developer
               </option>
               <option value="Construction Business">
@@ -96,6 +137,7 @@ const Contact = () => {
             </select>
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label
@@ -106,9 +148,11 @@ const Contact = () => {
             </label>
             <input
               type="text"
+              name="firstName"
               id="firstName"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your First Name"
+              required
             />
           </div>
           <div>
@@ -120,9 +164,11 @@ const Contact = () => {
             </label>
             <input
               type="text"
+              name="lastName"
               id="lastName"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your Last Name"
+              required
             />
           </div>
         </div>
@@ -133,9 +179,11 @@ const Contact = () => {
           </label>
           <input
             type="email"
+            name="email"
             id="email"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your Email"
+            required
           />
         </div>
 
@@ -145,28 +193,29 @@ const Contact = () => {
           </label>
           <input
             type="tel"
+            name="phone"
             id="phone"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="+1 800 123 4567"
           />
         </div>
+
         <div>
-          <label
-            className="block text-white font-medium mb-2"
-            htmlFor="businessType"
-          >
+          <label className="block text-white font-medium mb-2" htmlFor="help">
             What Do You Need Help With
           </label>
           <select
-            id="businessType"
+            name="help"
+            id="help"
             value={help}
             onChange={(e) => setHelp(e.target.value)}
             defaultValue=""
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+            required
           >
-            {/* <option value="" disabled className="text-gray-400" selected>
-             Selec
-            </option> */}
+            <option value="" disabled>
+              Select Service
+            </option>
             <option value="Fractional CFO Services">
               Fractional CFO Services
             </option>
@@ -174,46 +223,39 @@ const Contact = () => {
             <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
             <option value="QuickBooks Set-up">QuickBooks Set-up</option>
             <option value="QuickBook Training">QuickBook Training</option>
-            <option value="Something Else">Others</option>
+            <option value="Others">Something Else</option>
           </select>
         </div>
+
         <div>
-          { (
-            <div>
-              {/* <label
-              className="block text-white font-medium mb-2"
-              htmlFor="message"
-            >
-              Message
-            </label> */}
-              <textarea
-                id="message"
-                rows={5}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Write your message here..."
-              />
-            </div>
-          )}
+          <textarea
+            name="message"
+            id="message"
+            rows={5}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Write your message here..."
+            required
+          />
         </div>
 
         <button
           type="submit"
+          disabled={sending}
           className="bg-white w-full text-center font-semibold px-6 py-2 rounded-lg shadow-md transition duration-200"
         >
           <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
-            Submit
+            {sending ? "Sending..." : "Submit"}
           </span>
         </button>
       </form>
 
-      <div className="bg-gray-900 mt-24 w-full mx-auto min-h-[300px] flex flex-col items-center justify-center text-center  py-12">
+      <div className="bg-gray-900 mt-24 w-full mx-auto min-h-[300px] flex flex-col items-center justify-center text-center py-12">
         <h2 className="text-3xl sm:text-4xl font-normal text-white font-serif mb-2">
           Follow Me
         </h2>
         <p className="text-gray-300 font-serif text-base sm:text-lg mt-3 mb-8 max-w-xl">
           Stay connected and get the latest updates on my social media channels
         </p>
-
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {socialLinks.map((social, index) => (
             <a
