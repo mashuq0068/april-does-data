@@ -3,8 +3,19 @@ import { Typewriter } from "react-simple-typewriter";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Contact = () => {
-  const [help, setHelp] = useState("");
+  const [formData, setFormData] = useState({
+    company: "",
+    businessType: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    help: "",
+    message: "",
+  });
+
   const [sending, setSending] = useState(false);
 
   const socialLinks = [
@@ -39,39 +50,48 @@ const Contact = () => {
     },
   ];
 
-  const sendEmail = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     setSending(true);
-
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        e.target,
-        import.meta.env.VITE_EMAILJS_USER_ID
-      )
-
-      .then(
-        () => {
-          toast.success("Message sent successfully!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
-          setSending(false);
-        },
-        (error) => {
-          alert("Failed to send message: " + error.text);
-          setSending(false);
-        }
+    console.log(formData);
+    try {
+      await emailjs.send(
+        "service_zl03cnp",
+        "template_wu4cylu",
+        formData,
+        "Tq378oWFacA8-gmXk"
       );
+
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+
+      // Reset form
+      setFormData({
+        company: "",
+        businessType: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        help: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error("Failed to send message: " + error.text);
+    }
+
+    setSending(false);
   };
 
   return (
     <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12">
+      <ToastContainer />
       <h1 className="text-white mt-8 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-xl mx-auto">
         Schedule Your Consultation Now
       </h1>
@@ -102,7 +122,8 @@ const Contact = () => {
             <input
               type="text"
               name="company"
-              id="company"
+              value={formData.company}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your Company Name"
               required
@@ -117,14 +138,12 @@ const Contact = () => {
             </label>
             <select
               name="businessType"
-              id="businessType"
-              defaultValue=""
+              value={formData.businessType}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               required
             >
-              <option value="" disabled>
-                Select Business Type
-              </option>
+              <option value="">Select Business Type</option>
               <option value="Real Estate Investor/Developer">
                 Real Estate Investor/Developer
               </option>
@@ -149,7 +168,8 @@ const Contact = () => {
             <input
               type="text"
               name="firstName"
-              id="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your First Name"
               required
@@ -165,7 +185,8 @@ const Contact = () => {
             <input
               type="text"
               name="lastName"
-              id="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your Last Name"
               required
@@ -180,7 +201,8 @@ const Contact = () => {
           <input
             type="email"
             name="email"
-            id="email"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your Email"
             required
@@ -194,7 +216,8 @@ const Contact = () => {
           <input
             type="tel"
             name="phone"
-            id="phone"
+            value={formData.phone}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="+1 800 123 4567"
           />
@@ -206,16 +229,12 @@ const Contact = () => {
           </label>
           <select
             name="help"
-            id="help"
-            value={help}
-            onChange={(e) => setHelp(e.target.value)}
-            defaultValue=""
+            value={formData.help}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
             required
           >
-            <option value="" disabled>
-              Select Service
-            </option>
+            <option value="">Select Service</option>
             <option value="Fractional CFO Services">
               Fractional CFO Services
             </option>
@@ -230,7 +249,8 @@ const Contact = () => {
         <div>
           <textarea
             name="message"
-            id="message"
+            value={formData.message}
+            onChange={handleChange}
             rows={5}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Write your message here..."
