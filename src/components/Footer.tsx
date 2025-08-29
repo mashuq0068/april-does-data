@@ -89,7 +89,7 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="flex-1 w-full bg-white p-3 rounded-lg border border-gray-700  text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandPurple"
+                className="flex-1 w-full bg-white p-3 rounded-lg border border-gray-700  text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandPurple"
                 required
               />
               <button

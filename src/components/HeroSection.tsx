@@ -51,10 +51,10 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
             </h1>
 
             <p className="md:text-xl font-alike text-gray-600 text-justify mb-4 max-w-lg">
-              Fractional CFO + bookkeeping for Construction, services, and Real
-              Estate. With 25+ years building scalable systems that boost
-              clarity, cash flow, and profit. Award-winning results, including
-              scaling a client to $32M in under four years.
+              Fractional CFO + bookkeeping for Real Estate, Construction and
+              Service-based Businesses. With 25+ years building scalable systems
+              that boost clarity, cash flow, and profit. Award-winning results,
+              including scaling a client to $32M in under four years.
             </p>
 
             <div className="flex flex-col w-full max-w-lg sm:flex-row gap-4 justify-center lg:justify-start">
@@ -143,9 +143,7 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
             </div> */}
         </div>
         <div className="lg:grid grid-cols-2">
-          <div>
-
-          </div>
+          <div></div>
           <div className=" mb-6 flex justify-center w-full">
             <div className="inline-flex lg:w-1/2 items-center gap-2 bg-white/80 backdrop-blur-sm px-4 rounded-full border border-blue-100 text-sm font-medium text-blue-700 mb-2 py-[16px] my-[5px]">
               <img src={intuitLogo} alt="Intuit" className="w-4 h-4" />
@@ -153,7 +151,6 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
               QuickBooks Certified As A Pro Advisor
             </div>
           </div>
-         
         </div>
       </div>
       {/* </div> */}

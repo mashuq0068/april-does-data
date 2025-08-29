@@ -52,7 +52,7 @@ const Service3: React.FC = () => {
         {/* Left Section (Updated) */}
         {/* Left Section (New Content) */}
         <div className="text-white relative space-y-6">
-          <h2 className="text-2xl lg:text-3xl mb-3 text-center font-bold">
+          <h2 className="text-2xl lg:text-3xl mt-5 mb-3 text-center font-bold">
             Fractional CFO services Service-Based Businesses{" "}
             <p className="text-sm max-w-xl  text-center font-normal mt-4">
               <strong>April Does Data</strong> streamlines everyday financial

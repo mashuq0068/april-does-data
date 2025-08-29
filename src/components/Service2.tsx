@@ -67,7 +67,7 @@ const Service2: React.FC = () => {
           ))}
         </div>
         <div className="text-white relative order-1 md:order-2 space-y-6">
-          <h2 className="text-2xl lg:text-3xl mb-3 text-center font-bold">
+          <h2 className="text-2xl lg:text-3xl mt-5 mb-3 text-center font-bold">
             Fractional CFO services for Construction business
             <p className="text-sm max-w-xl  text-center font-normal mt-4">
              <strong>April Does Data</strong> brings structure and transparency to the intricate finances of construction firms using QuickBooks Online. We implement job costing to allocate labor, subcontractor fees, and materials to specific projects, enabling precise margin evaluations at each phase. Our processes ensure seamless handling of change orders and progress billing, syncing invoices with actual project milestones. Integrating QuickBooks Time guarantees reliable payroll, proper hour assignments, and controlled expenses. We also develop budgets and variance analyses to flag potential overruns early. With powerful reporting features, we aggregate data from various divisions and generate tailored financial reports for lenders, bonding agents, and key stakeholders.

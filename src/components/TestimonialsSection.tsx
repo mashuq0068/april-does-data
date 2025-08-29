@@ -45,6 +45,15 @@ const TestimonialsSection = () => {
       avatar: "ST",
       color: "bg-orange-500",
     },
+    {
+      text: "QB Lifesaver",
+      description:
+        "April helped me out when I was in a QB bind. Her vast knowledge allowed me to quickly get back on track.",
+      author: " Derek T",
+      role: " Business Owner",
+      avatar: "DT",
+      color: "bg-green-500",
+    },
   ];
 
   useEffect(() => {
@@ -67,7 +76,7 @@ const TestimonialsSection = () => {
   return (
     <div>
       <section id="testimonials" className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
@@ -91,7 +100,7 @@ const TestimonialsSection = () => {
           {/* Testimonials Carousel */}
           <div className="relative max-w-7xl mx-auto">
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12">
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-4 gap-8">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
