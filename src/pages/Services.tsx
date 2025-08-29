@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
-import Service3 from "@/components/Service1";
+import Service3 from "@/components/Service3";
 import Service1 from "@/components/Service1";
 import Service2 from "@/components/Service2";
 import ServicesSection from "@/components/ServicesSection";

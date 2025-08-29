@@ -42,10 +42,8 @@ const services: Service[] = [
   },
 ];
 
-
-
-const Service3: React.FC = () => {
-    const navigate = useNavigate()
+const Service1: React.FC = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen pt-12 bg-gray-100 flex items-center justify-center ">
@@ -55,10 +53,9 @@ const Service3: React.FC = () => {
         {/* Left Section (New Content) */}
         <div className="text-white relative space-y-6">
           <h2 className="text-2xl lg:text-3xl mb-3 text-center font-bold">
-           Fractional CFO services Service-Based Businesses
+            Fractional CFO services for Real Estate investors/developer{" "}
             <p className="text-sm max-w-xl  text-center font-normal mt-4">
-              <strong>April Does Data</strong> equips real estate investors and developers with precise financial management by establishing robust, property-specific records in QuickBooks Online. We meticulously track acquisitions, dispositions, rehab costs, holding costs, and commissions, ensuring real-time visibility into portfolio performance, cap rates, and after-repair value (ARV). Our systems streamline recurring rent invoicing, prompt collections, and partner distributions, aligning every transaction with the correct entity for accurate buy-and-hold or BRRR (Buy, Rehab, Rent, Refinance) strategies. Using advanced reporting, we deliver consolidated insights that highlight profitability, cash flow trends, cap rates, and return on investment. This structured bookkeeping and detailed analytics empower faster, data-driven decisions to optimize acquisitions, dispositions, and portfolio growth.
-              
+              <strong>April Does Data</strong> equips real estate investors and developers with precise financial management by establishing robust, property-specific records in QuickBooks Online. We meticulously track acquisitions, dispositions, rehab costs, holding costs, and commissions, ensuring real-time visibility into portfolio performance, cap rates, and after-repair value (ARV). Our systems streamline recurring rent invoicing, prompt collections, and partner distributions, aligning every transaction with the correct entity for accurate buy-and-hold or BRRR (Buy, Rehab, Rent, Refinance) strategies. Using advanced reporting, we deliver consolidated insights that highlight profitability, cash flow trends, cap rates, and return on investment. This structured bookkeeping and detailed analytics empower faster, data-driven decisions to optimize acquisitions, dispositions, and portfolio growth.
             </p>
           </h2>
           <div className="text-sm"></div>
@@ -75,8 +72,10 @@ const Service3: React.FC = () => {
               <p className="text-white mb-4 font-medium">
                 Ready To Learn Your Profit Margin?
               </p>
-              <button                   onClick={() => navigate('/contact')}
- className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
+              <button
+                onClick={() => navigate("/contact")}
+                className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+              >
                 Free Assessment
               </button>
             </div>
@@ -105,4 +104,4 @@ const Service3: React.FC = () => {
   );
 };
 
-export default Service3;
+export default Service1;

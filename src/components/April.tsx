@@ -15,7 +15,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, x: -200 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+      transition={{ duration: 0.3, ease: "easeOut",  }}
       viewport={{ amount: 0.3 }}
     />
     <motion.img
@@ -24,7 +24,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, y: -200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ amount: 0.3 }}
     />
     <motion.img
@@ -33,7 +33,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ amount: 0.3 }}
     />
   </div>
@@ -46,7 +46,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, y: -200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ amount: 0.3 }}
     />
     <motion.img
@@ -55,7 +55,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, y: -200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ amount: 0.3 }}
     />
     <motion.img
@@ -64,7 +64,7 @@ const April = () => {
       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 object-contain shadow-xl rounded-lg"
       initial={{ opacity: 0, y: -200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       viewport={{ amount: 0.3 }}
     />
   </div>
@@ -96,7 +96,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm shadow-xl rounded-lg"
               initial={{ opacity: 0, x: -200 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.3, ease: "easeOut",  }}
               viewport={{ amount: 0.3 }}
             />
             <motion.img
@@ -105,7 +105,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm object-contain shadow-xl rounded-lg"
               initial={{ opacity: 0, y: -200 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ amount: 0.3 }}
             />
           </div>
@@ -118,7 +118,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm shadow-xl object-contain rounded-lg"
               initial={{ opacity: 0, y: -200 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ amount: 0.3 }}
             />
             <motion.img
@@ -127,7 +127,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm object-contain shadow-xl rounded-lg"
               initial={{ opacity: 0, y: -200 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ amount: 0.3 }}
             />
           </div>
@@ -140,7 +140,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm shadow-xl rounded-lg"
               initial={{ opacity: 0, x: 200 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ amount: 0.3 }}
             />
             <motion.img
@@ -149,7 +149,7 @@ const April = () => {
               className="w-full max-w-xs md:max-w-sm object-contain shadow-xl rounded-lg"
               initial={{ opacity: 0, y: -200 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ amount: 0.3 }}
             />
           </div>

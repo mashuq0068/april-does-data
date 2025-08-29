@@ -11,33 +11,33 @@ interface Service {
 
 const services: Service[] = [
   {
-    desc: "Configuring class and location tracking for property-level insights, including ARV and cap rate analysis",
-    icon: "🏠",
+    desc: "Automating recurring invoices and job schedules",
+    icon: "🧾",
     color: "bg-green-500",
   },
   {
-    desc: "Automating recurring rent invoices and collection reminders for rental portfolios",
-    icon: "📊",
+    desc: "Activating mobile invoicing for on-the-go staff",
+    icon: "📱",
     color: "bg-teal-500",
   },
   {
-    desc: "Recording lease payments, rehab costs, holding costs, and commissions with precision",
-    icon: "💼",
+    desc: "Integrating QuickBooks Payments with alerts and digital payment choices",
+    icon: "💳",
     color: "bg-orange-500",
   },
   {
-    desc: "Reconciling bank, loan, and escrow accounts to support refinancing and disposition processes",
-    icon: "💳",
+    desc: "Centralizing client information in the QuickBooks Customer Center",
+    icon: "👥",
     color: "bg-yellow-500",
   },
   {
-    desc: "Compiling unified financial statements across entities for portfolio-wide clarity",
-    icon: "📑",
+    desc: "Connecting QuickBooks Time to payroll for precise labor costing",
+    icon: "⏱️",
     color: "bg-blue-500",
   },
   {
-    desc: "Designing dashboards to monitor ROI, cash flow, cap rates, and investment performance",
-    icon: "📈",
+    desc: "Developing dashboards to evaluate profitability by service, team, or location",
+    icon: "📊",
     color: "bg-purple-500",
   },
 ];
@@ -53,29 +53,27 @@ const Service3: React.FC = () => {
         {/* Left Section (New Content) */}
         <div className="text-white relative space-y-6">
           <h2 className="text-2xl lg:text-3xl mb-3 text-center font-bold">
-            Fractional CFO services for Real Estate investors/developer
+            Fractional CFO services Service-Based Businesses{" "}
             <p className="text-sm max-w-xl  text-center font-normal mt-4">
-              <strong>April Does Data</strong> equips real estate investors and
-              developers with precise financial management by establishing
-              robust, property-specific records in QuickBooks Online. We
-              meticulously track acquisitions, dispositions, rehab costs,
-              holding costs, and commissions, ensuring real-time visibility into
-              portfolio performance, cap rates, and after-repair value (ARV).
-              Our systems streamline recurring rent invoicing, prompt
-              collections, and partner distributions, aligning every transaction
-              with the correct entity for accurate buy-and-hold or BRRR (Buy,
-              Rehab, Rent, Refinance) strategies. Using advanced reporting, we
-              deliver consolidated insights that highlight profitability, cash
-              flow trends, cap rates, and return on investment. This structured
-              bookkeeping and detailed analytics empower faster, data-driven
-              decisions to optimize acquisitions, dispositions, and
-              portfolio growth.
+              <strong>April Does Data</strong> streamlines everyday financial
+              tasks for service companies in QuickBooks Online, freeing them to
+              prioritize outstanding client service. We design automated
+              invoicing and scheduling for routine jobs, ensuring timely billing
+              without interruptions. Mobile invoicing tools allow field teams to
+              generate and dispatch bills on-site, speeding up collections and
+              minimizing admin hurdles. Via QuickBooks Payments, we introduce
+              online payment methods with automatic reminders to boost cash flow
+              and reduce late payments. Centralizing client data offers owners a
+              holistic overview of histories, balances, and trends in a single
+              hub. Proper integration of time tracking and payroll assigns costs
+              to jobs accurately, while profitability dashboards reveal
+              top-performing services, teams, or sites.
             </p>
           </h2>
           <div className="text-sm"></div>
 
           <img
-            src="/service-gap.png"
+            src="/service-gap-3.png"
             className=" max-h-[45%]  w-max mx-auto"
             alt=""
           />
