@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -57,33 +56,42 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setSending(true);
-    console.log(formData);
+
     try {
-      await emailjs.send(
-        "service_zl03cnp",
-        "template_wu4cylu",
-        formData,
-        "Tq378oWFacA8-gmXk"
-      );
-
-      toast.success("Message sent successfully!", {
-        position: "top-right",
-        autoClose: 3000,
+      const response = await fetch("https://formspree.io/f/mqadpwrd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+        ...formData,
+        _subject: `A request for consultation from ${formData.firstName} ${formData.lastName} - April Does Data`,
+      }),
       });
 
-      // Reset form
-      setFormData({
-        company: "",
-        businessType: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        help: "",
-        message: "",
-      });
+      if (response.ok) {
+        toast.success("Message sent successfully!", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+
+        // // Reset form
+        // setFormData({
+        //   company: "",
+        //   businessType: "",
+        //   firstName: "",
+        //   lastName: "",
+        //   email: "",
+        //   phone: "",
+        //   help: "",
+        //   message: "",
+        // });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
     } catch (error) {
-      toast.error("Failed to send message: " + error.text);
+      toast.error("Error sending message: " + error.message);
     }
 
     setSending(false);
@@ -113,10 +121,7 @@ const Contact = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label
-              className="block text-white font-medium mb-2"
-              htmlFor="company"
-            >
+            <label className="block text-white font-medium mb-2" htmlFor="company">
               Company Name
             </label>
             <input
@@ -130,10 +135,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label
-              className="block text-white font-medium mb-2"
-              htmlFor="businessType"
-            >
+            <label className="block text-white font-medium mb-2" htmlFor="businessType">
               Business Type
             </label>
             <select
@@ -144,25 +146,16 @@ const Contact = () => {
               required
             >
               <option value="">Select Business Type</option>
-              <option value="Real Estate Investor/Developer">
-                Real Estate Investor/Developer
-              </option>
-              <option value="Construction Business">
-                Construction Business
-              </option>
-              <option value="Service-based Business">
-                Service-based Business
-              </option>
+              <option value="Real Estate Investor/Developer">Real Estate Investor/Developer</option>
+              <option value="Construction Business">Construction Business</option>
+              <option value="Service-based Business">Service-based Business</option>
             </select>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label
-              className="block text-white font-medium mb-2"
-              htmlFor="firstName"
-            >
+            <label className="block text-white font-medium mb-2" htmlFor="firstName">
               First Name
             </label>
             <input
@@ -176,10 +169,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label
-              className="block text-white font-medium mb-2"
-              htmlFor="lastName"
-            >
+            <label className="block text-white font-medium mb-2" htmlFor="lastName">
               Last Name
             </label>
             <input
@@ -235,9 +225,7 @@ const Contact = () => {
             required
           >
             <option value="">Select Service</option>
-            <option value="Fractional CFO Services">
-              Fractional CFO Services
-            </option>
+            <option value="Fractional CFO Services">Fractional CFO Services</option>
             <option value="Catch-up/Clean-up">Catch-up/Clean-up</option>
             <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
             <option value="QuickBooks Set-up">QuickBooks Set-up</option>
