@@ -45,7 +45,7 @@ const Navigation = ({ onGetAssessment }: NavigationProps) => {
             <img
               src="/logo.png"
               alt="April Does Data Logo"
-              className="h-16 w-auto"
+              className="lg:h-16 h-8 w-auto"
             />
             {/* <span className="text-xl font-bold text-violet-700">April Does Data</span> */}
           </div>

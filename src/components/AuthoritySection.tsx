@@ -97,11 +97,11 @@ export default function AuthoritySection() {
           </div>
 
           <div>
-            <h2 className="text-2xl  gradient-text font-bold text-gray-900 mb-6">
+            <h2 className="md:text-2xl  gradient-text font-bold text-gray-900 mb-6">
               Tell Her Your Problem And She'll Find A Solution
             </h2>
 
-            <p className="text-xl  mb-8 leading-relaxed">
+            <p className="md:text-xl text-sm  mb-8 leading-relaxed">
               <span className="font-semibold text-gray-900">
                 April Does Data
               </span>{" "}

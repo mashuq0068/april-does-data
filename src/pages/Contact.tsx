@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -56,42 +57,33 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setSending(true);
-
+    console.log(formData);
     try {
-      const response = await fetch("https://formspree.io/f/mqadpwrd", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-        ...formData,
-        _subject: `A request for consultation from ${formData.firstName} ${formData.lastName} - April Does Data`,
-      }),
+      await emailjs.send(
+        "service_fny4g0q",
+        "template_wu4cylu",
+        formData,
+        "Tq378oWFacA8-gmXk"
+      );
+
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 3000,
       });
 
-      if (response.ok) {
-        toast.success("Message sent successfully!", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-
-        // // Reset form
-        // setFormData({
-        //   company: "",
-        //   businessType: "",
-        //   firstName: "",
-        //   lastName: "",
-        //   email: "",
-        //   phone: "",
-        //   help: "",
-        //   message: "",
-        // });
-      } else {
-        toast.error("Failed to send message. Please try again.");
-      }
+      // Reset form
+      setFormData({
+        company: "",
+        businessType: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        help: "",
+        message: "",
+      });
     } catch (error) {
-      toast.error("Error sending message: " + error.message);
+      toast.error("Failed to send message: " + error.text);
     }
 
     setSending(false);
@@ -100,10 +92,10 @@ const Contact = () => {
   return (
     <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12">
       <ToastContainer />
-      <h1 className="text-white mt-8 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-xl mx-auto">
-        Schedule Your Consultation Now
+      <h1 className="text-white mt-8 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl mx-auto">
+        Get Your Free Assessment{" "}
       </h1>
-      <p className="text-center text-lg sm:text-xl font-serif text-white max-w-2xl mx-auto">
+      <p className="text-center text-lg sm:text-xl mt-5 font-serif text-white  mx-auto">
         <Typewriter
           words={[
             "Get time on the calendar now to discuss your financial and bookkeeping needs!",
@@ -121,7 +113,10 @@ const Contact = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-white font-medium mb-2" htmlFor="company">
+            <label
+              className="block text-white font-medium mb-2"
+              htmlFor="company"
+            >
               Company Name
             </label>
             <input
@@ -135,7 +130,10 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-white font-medium mb-2" htmlFor="businessType">
+            <label
+              className="block text-white font-medium mb-2"
+              htmlFor="businessType"
+            >
               Business Type
             </label>
             <select
@@ -146,16 +144,25 @@ const Contact = () => {
               required
             >
               <option value="">Select Business Type</option>
-              <option value="Real Estate Investor/Developer">Real Estate Investor/Developer</option>
-              <option value="Construction Business">Construction Business</option>
-              <option value="Service-based Business">Service-based Business</option>
+              <option value="Real Estate Investor/Developer">
+                Real Estate Investor/Developer
+              </option>
+              <option value="Construction Companies">
+                Construction Companies
+              </option>
+              <option value="Service-based Business">
+                Service-based Business
+              </option>
             </select>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-white font-medium mb-2" htmlFor="firstName">
+            <label
+              className="block text-white font-medium mb-2"
+              htmlFor="firstName"
+            >
               First Name
             </label>
             <input
@@ -169,7 +176,10 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-white font-medium mb-2" htmlFor="lastName">
+            <label
+              className="block text-white font-medium mb-2"
+              htmlFor="lastName"
+            >
               Last Name
             </label>
             <input
@@ -225,7 +235,9 @@ const Contact = () => {
             required
           >
             <option value="">Select Service</option>
-            <option value="Fractional CFO Services">Fractional CFO Services</option>
+            <option value="Fractional CFO Services">
+              Fractional CFO Services
+            </option>
             <option value="Catch-up/Clean-up">Catch-up/Clean-up</option>
             <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
             <option value="QuickBooks Set-up">QuickBooks Set-up</option>

@@ -1,18 +1,46 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 interface FooterProps {
   onGetAssessment: () => void;
 }
 const Footer = ({ onGetAssessment }: FooterProps) => {
-  const navigate = useNavigate()
-  const handleSubscribe = (e) => {
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+
+  const navigate = useNavigate();
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    if (!email) return alert("Please enter your email!");
-    // Handle subscription logic here (API call or form submission)
-    alert(`Subscribed with ${email}`);
-    e.target.reset();
+
+    if (!subscribeEmail) {
+      toast.error("Please enter an email.");
+      return;
+    }
+
+    try {
+      const templateParams = {
+        user_email: subscribeEmail, // This will be used in your EmailJS template
+      };
+
+      await emailjs.send(
+        "service_fny4g0q",
+        "template_bnss1v6",
+        templateParams,
+        "Tq378oWFacA8-gmXk"
+      );
+
+      toast.success("Subscribed successfully!", {
+        position: "top-right",
+      });
+
+      setSubscribeEmail(""); // Reset input
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Failed to subscribe. Please try again.");
+    }
   };
+
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,9 +55,8 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
               />
               <span className="text-xl font-bold">April Does Data</span>
             </div>
-            <p className="max-w-md">
-              A seasoned expert with 25+ years of experience in CFO and
-              Fractional Bookkeeping Services. I’ve helped businesses streamline
+            <p className="max-w-sm text-justify">
+              A seasoned expert with 25+ years of experience in Fractional CFO and Bookkeeping Services. I’ve helped businesses streamline
               their records, improve cash flow, and make confident financial
               decisions with clarity and precision.
             </p>
@@ -83,13 +110,15 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
             {/* Newsletter Form */}
             <form
               onSubmit={handleSubscribe}
-              className="w-full  ml-auto flex flex-col sm:flex-row items-center gap-4"
+              className="w-full ml-auto flex flex-col sm:flex-row items-center gap-4"
             >
               <input
                 type="email"
                 name="email"
+                value={subscribeEmail}
+                onChange={(e) => setSubscribeEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 w-full bg-white p-3 rounded-lg border border-gray-700  text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandPurple"
+                className="flex-1 w-full bg-white p-3 rounded-lg border border-gray-700 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandPurple"
                 required
               />
               <button
@@ -107,7 +136,7 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
                   Ready To Learn Your Profit Margin?
                 </p>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate("/contact")}
                   className="w-full bg-white text-brandPurple font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Free Assessment

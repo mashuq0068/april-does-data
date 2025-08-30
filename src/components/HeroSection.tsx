@@ -29,28 +29,29 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
           ></div>
 
           {/* Right Section with Text */}
-          <div className="flex h-full flex-col md:pb-0 pb-12 capitalize items-center justify-center text-center  ">
-            <div className="w-full max-w-3xl mx-auto text-white font-serif">
-              <h1 className="text-3xl md:text-5xl mt-20 font-semibold text-center">
-                Empowering Your Finances
-              </h1>
-              <h1 className="text-xl md:text-3xl mt-4 font-semibold text-center overflow-hidden whitespace-nowrap md:leading-snug pr-2 animate-typing ">
-                Fractional CFO and Bookkeeping Services
-              </h1>
-            </div>
-          </div>
+      <div className="flex h-full flex-col pb-6 md:pb-12 capitalize items-center justify-center text-center">
+  <div className="w-full max-w-3xl px-4 text-white font-serif">
+    <h1 className="text-xl md:text-5xl mt-10 md:mt-20 font-semibold">
+      Empowering Your Finances
+    </h1>
+    <h2 className=" md:text-3xl mt-4 font-semibold overflow-hidden whitespace-nowrap leading-snug animate-typing">
+      Fractional CFO and Bookkeeping Services
+    </h2>
+  </div>
+</div>
+
         </div>
         <Slides />
-        <div className="grid grid-cols-1 lg:grid-cols-2 mb-6 md:gap-0 gap-12 items-center">
-          <div className="text-center ml-[10%] lg:text-left">
-            <h1 className="md:text-xl max-w-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:mb-6 md:gap-0 lg:gap-12 items-center">
+          <div className="text-center md:ml-[10%] lg:text-left">
+            <h1 className="md:text-xl text-sm max-w-xl font-bold gradient-text uppercase text-gray-900 mb-3 leading-tight">
               Clean Books. <span className="gradient-text">Clear Vision.</span>{" "}
               <span className="text-blue-60 gradient-text">
                 Confident Decisions.
               </span>
             </h1>
 
-            <p className="md:text-xl font-alike text-gray-600 text-justify mb-4 max-w-lg">
+            <p className="md:text-xl text-xs font-alike text-gray-600 mx-auto mb-4 md:max-w-lg">
               Fractional CFO + bookkeeping for Real Estate, Construction and
               Service-based Businesses. With 25+ years building scalable systems
               that boost clarity, cash flow, and profit. Award-winning results,
@@ -95,21 +96,21 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
           </div>
 
           {/* <div className="relative"> */}
-          <div className="flex gap-6 flex-wrap justify-center lg:justify-center items-center mt-8">
+          <div className="flex gap-6 flex-wrap justify-center lg:justify-center items-center lg:mt-8">
             <img
               src="/badge-2.png"
               alt="Badge 1"
-              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+              className="lg:w-48 w-24 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
             />
             <img
               src="/badge-3.png"
               alt="Badge 2"
-              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+              className="lg:w-48 w-24 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
             />
             <img
               src="/badge-1.png"
               alt="Badge 3"
-              className="w-48 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
+              className="lg:w-48 w-24 h-48 object-contain transform transition-transform duration-300 hover:scale-110"
             />
           </div>
 
