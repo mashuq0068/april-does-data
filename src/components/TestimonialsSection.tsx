@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -45,14 +45,51 @@ const TestimonialsSection = () => {
       avatar: "ST",
       color: "bg-orange-500",
     },
+
+    {
+      text: "Relieved and happy",
+      description:
+        "This is great! I’m very happy and relieved that my books are finally caught up. I can see my business more clearly now. Thank you for all your hard work!\nPlease let me know if you have any recommendations on how I should handle my accounts. Thank You!\n– (This customer also sent me a $40 Visa Virtual gift card)\n“Hi April, Here goes a small gift of my appreciation for all the help with my books. Thank you! Happy Holidays!”",
+      author: "Ramsey N.",
+      role: "Telecommunications Business Owner",
+      avatar: "RN",
+      color: "bg-teal-500",
+    },
+    {
+      text: "So thankful I found you",
+      description:
+        "Ok, thanks for the update. I had a feeling that Bookkeeper was not doing things right. I really wish my CPA told me cancel it and just find someone else. She thought to give her a chance. I wasted 4 weeks of nothing... and so I am grateful to have found you. Thank you so much for doing this for me. I’m really so thankful.",
+      author: "Angela L.",
+      role: "Real Estate Investor",
+      avatar: "AL",
+      color: "bg-purple-500",
+    },
     {
       text: "QB Lifesaver",
       description:
         "April helped me out when I was in a QB bind. Her vast knowledge allowed me to quickly get back on track.",
-      author: " Derek T",
-      role: " Business Owner",
+      author: "Derek T.",
+      role: "Business Owner",
       avatar: "DT",
       color: "bg-green-500",
+    },
+    {
+      text: "Got me unstuck fast",
+      description:
+        "I was left in a pinch by my previous bookkeeper; April was great at getting the ball rolling and finishing up all of the things I was stuck with in an extremely timely manner",
+      author: "Taylor L.",
+      role: "Commercial Real Estate Investor",
+      avatar: "TL",
+      color: "bg-indigo-500",
+    },
+    {
+      text: "Thorough and efficient",
+      description:
+        "I just wanted to send a note saying thank you for cleaning up our quickbooks! You did a thorough and efficient job at making our books correct and we appreciate all the hard work you did!",
+      author: "Shelby T.",
+      role: "Construction/Agriculture Business",
+      avatar: "ST",
+      color: "bg-red-500",
     },
   ];
 
@@ -100,44 +137,46 @@ const TestimonialsSection = () => {
           {/* Testimonials Carousel */}
           <div className="relative max-w-7xl mx-auto">
             <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12">
-              <div className="grid md:grid-cols-4 gap-8">
+              <div className="grid relative md:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className={`bg-white rounded-2xl p-6 shadow-lg transition-all duration-500 transform ${
+                    className={`bg-white rounded-2xl p-6 shadow-lg flex flex-col justify-between transition-all duration-500 transform ${
                       index === currentTestimonial
                         ? "scale-105 opacity-100"
                         : "scale-95 opacity-70"
                     }`}
                   >
-                    {/* Quote icon */}
-                    <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${testimonial.color}`}
-                    >
-                      <Quote className="w-6 h-6 text-white" />
+                    {/* Top section */}
+                    <div>
+                      {/* Quote icon */}
+                      <div
+                        className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${testimonial.color}`}
+                      >
+                        <Quote className="w-6 h-6 text-white" />
+                      </div>
+
+                      {/* Stars */}
+                      <div className="flex space-x-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                          />
+                        ))}
+                      </div>
+
+                      {/* Testimonial text */}
+                      <blockquote className="text-lg font-semibold text-gray-900 mb-4">
+                        "{testimonial.text}"
+                      </blockquote>
+                      <p className="space-y-3 mb-6 whitespace-pre-line">
+                        {testimonial.description}
+                      </p>
                     </div>
 
-                    {/* Stars */}
-                    <div className="flex space-x-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-
-                    {/* Testimonial text */}
-                    <blockquote className="text-lg font-semibold text-gray-900 mb-4">
-                      "{testimonial.text}"
-                    </blockquote>
-
-                    <p className="text-gray-600 mb-6">
-                      {testimonial.description}
-                    </p>
-
-                    {/* Author */}
-                    <div className="flex items-center space-x-3">
+                    {/* Author block (always at bottom) */}
+                    <div className="flex items-center space-x-3 mt-auto">
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold ${testimonial.color}`}
                       >

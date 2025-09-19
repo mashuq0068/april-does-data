@@ -51,7 +51,7 @@ const HeroSection = ({ onGetAssessment }: HeroSectionProps) => {
               </span>
             </h1>
 
-            <p className="md:md:text-xl text-xs font-alike text-gray-600 mx-auto mb-4 md:max-w-lg">
+            <p className="md:md:text-xl text-xs font-alike text-gray-600 lg:mx-0 mx-auto mb-4 md:max-w-lg">
               Fractional CFO + bookkeeping for Real Estate, Construction and
               Service-based Businesses. With 25+ years building scalable systems
               that boost clarity, cash flow, and profit. Award-winning results,
