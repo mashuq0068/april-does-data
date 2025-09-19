@@ -66,7 +66,7 @@ const PricingSection = ({ onGetAssessment }: PricingSectionProps) => {
           <h2 className="text-4xl font-bold gradient-text uppercase mb-4">
             Do The <span className="gradient-text">Math</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="md:text-xl text-gray-600 max-w-3xl mx-auto">
             No hidden fees, no surprises. Choose the perfect plan that grows with your business.
           </p>
         </div>

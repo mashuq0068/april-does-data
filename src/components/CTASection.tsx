@@ -22,7 +22,7 @@ const CTASection = ({ onGetAssessment }: CTASectionProps) => {
           Ready to Get Clean Books and <span className="">Peace of Mind?</span>
         </h2>
 
-        <p className="text-xl text-blue-100 mb-8">
+        <p className="md:text-xl text-blue-100 mb-8">
           Schedule your free assessment today. No pressure, no sales pitch —
           just clarity.
         </p>

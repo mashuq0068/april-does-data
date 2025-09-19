@@ -101,7 +101,7 @@ export default function AuthoritySection() {
               Tell Her Your Problem And She'll Find A Solution
             </h2>
 
-            <p className="md:text-xl text-sm  mb-8 leading-relaxed">
+            <p className="md:md:text-xl text-sm  mb-8 leading-relaxed">
               <span className="font-semibold text-gray-900">
                 April Does Data
               </span>{" "}

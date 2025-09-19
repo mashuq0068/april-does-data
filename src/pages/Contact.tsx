@@ -90,12 +90,16 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-brandPurple to-brandPink mx-auto pt-12">
+    <div className="bg-gradient-to-r 
+            from-[#7C3AED] 
+            via-[#7C3AED] 
+            via-[50%] 
+            to-pink-500 mx-auto pt-12">
       <ToastContainer />
       <h1 className="text-white mt-8 font-medium text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl mx-auto">
         Get Your Free Assessment{" "}
       </h1>
-      <p className="text-center text-lg sm:text-xl mt-5 font-serif text-white  mx-auto">
+      <p className="text-center text-lg sm:md:text-xl mt-5 font-serif text-white  mx-auto">
         <Typewriter
           words={[
             "Get time on the calendar now to discuss your financial and bookkeeping needs!",

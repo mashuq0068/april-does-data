@@ -93,7 +93,7 @@ const Service1: React.FC = () => {
                   <span className="leading-none">{service.icon}</span>
                 </div>
                 <div className="max-w-md">
-                  <p className="md:text-xl text-sm">{service.desc}</p>
+                  <p className="md:md:text-xl text-sm">{service.desc}</p>
                 </div>
               </CardContent>
             </Card>

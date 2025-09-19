@@ -47,7 +47,7 @@ const Navigation = ({ onGetAssessment }: NavigationProps) => {
               alt="April Does Data Logo"
               className="lg:h-16 h-8 w-auto"
             />
-            {/* <span className="text-xl font-bold text-violet-700">April Does Data</span> */}
+            {/* <span className="md:text-xl font-bold text-violet-700">April Does Data</span> */}
           </div>
 
           {/* Desktop Navigation */}

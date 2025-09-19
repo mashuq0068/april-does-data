@@ -67,7 +67,7 @@ const ServicesSection = () => {
               <h2 className="text-4xl font-bold gradient-text uppercase mb-4">
                 Our <span className="gradient-text">Services</span>
               </h2>
-              <p className="text-xl  max-w-3xl mx-auto">
+              <p className="md:text-xl  max-w-3xl mx-auto">
                 Comprehensive bookkeeping solutions tailored to your business
                 needs
               </p>

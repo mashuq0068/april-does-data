@@ -53,7 +53,7 @@ const Badges: React.FC = () => {
                 alt={badge.title}
                 className="w-24 h-24 mb-4"
               />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="md:text-xl font-semibold text-gray-900 mb-2">
                 {badge.title}
               </h3>
               <p className="text-gray-600 text-sm">{badge.description}</p>

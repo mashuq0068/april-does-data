@@ -53,7 +53,7 @@ const Footer = ({ onGetAssessment }: FooterProps) => {
                 className="h-10"
                 alt=""
               />
-              <span className="text-xl font-bold">April Does Data</span>
+              <span className="md:text-xl font-bold">April Does Data</span>
             </div>
             <p className="max-w-sm text-justify">
               A seasoned expert with 25+ years of experience in Fractional CFO and Bookkeeping Services. I’ve helped businesses streamline

@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
             <h2 className="text-4xl font-bold gradient-text uppercase mb-4">
               What Our <span className="gradient-text">Clients Say</span>
             </h2>
-            <p className="text-xl  max-w-2xl mx-auto">
+            <p className="md:text-xl  max-w-2xl mx-auto">
               Real feedback from real business owners
             </p>
           </div>
